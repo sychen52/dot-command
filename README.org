@@ -1,0 +1,11 @@
+* A Emacs package to mimic dot command in vim.
+
+** Configure
+#+begin_src emacs-lisp
+(unless (package-installed-p 'dot-command)
+  (package-vc-install "https://github.com/sychen52/dot-command"))
+(use-package dot-command
+  :config
+  (setq dot-command-neutral-cmds '(your-command-that-you-want-to-ignore))
+  (push #'your-command-that-you-want-to-add dot-command-record-cmds))
+#+end_src
